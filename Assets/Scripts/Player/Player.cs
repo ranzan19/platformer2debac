@@ -21,6 +21,13 @@ public class Player : MonoBehaviour
     public Ease ease = Ease.OutBack;
 
 
+    [Header("Animation Player")]
+    public string boolRun = "Run";
+    public string triggerJump = "Jump";
+    public Animator animator;
+    public float playerSwipeDuration = .1f;
+
+
     private float _currentSpeed;
 
     private void Update()
@@ -32,19 +39,40 @@ public class Player : MonoBehaviour
     private void HandleMoviment()
     {
         if (Input.GetKey(KeyCode.LeftShift))
+        {
             _currentSpeed = speedRun;
+            animator.speed = 2;
+        }
         else
+        {
             _currentSpeed = speed;
+            animator.speed = 1;
+        }
         
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             //myRigidbody2D.MovePosition(myRigidbody2D.position - velocity * Time.deltaTime);
             myRigidbody2D.velocity = new Vector2(-_currentSpeed, myRigidbody2D.velocity.y);
+            if(myRigidbody2D.transform.localScale.x != -1)
+            {
+                myRigidbody2D.transform.DOScaleX(-1, playerSwipeDuration);
+            }
+            animator.SetBool(boolRun, true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             //myRigidbody2D.MovePosition(myRigidbody2D.position + velocity * Time.deltaTime);
             myRigidbody2D.velocity = new Vector2(_currentSpeed, myRigidbody2D.velocity.y);
+            if(myRigidbody2D.transform.localScale.x != 1)
+            {
+                myRigidbody2D.transform.DOScaleX(1, playerSwipeDuration);
+            }
+            animator.SetBool(boolRun, true);
+        }
+        else
+        {
+            animator.SetBool(boolRun, false);
         }
 
 
@@ -64,7 +92,7 @@ public class Player : MonoBehaviour
         {
             myRigidbody2D.velocity = Vector2.up * forceJump;
             myRigidbody2D.transform.localScale = Vector2.one;
-
+            animator.SetTrigger(triggerJump);
             DOTween.Kill(myRigidbody2D.transform);
 
             HandleScaleJump();
