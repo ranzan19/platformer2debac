@@ -1113,6 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody2D: {fileID: 359934625}
+  healthBase: {fileID: 359934630}
   friction: {x: -0.3, y: 0}
   speed: 16
   speedRun: 21
@@ -1123,6 +1124,7 @@ MonoBehaviour:
   ease: 27
   boolRun: Run
   triggerJump: Jump
+  triggerDeath: Death
   animator: {fileID: 1089221681}
   playerSwipeDuration: 0.1
 --- !u!114 &359934630
@@ -1137,8 +1139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffe4726cdc1c9041aa4e8309a562551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLife: 15
-  destroyOnKill: 1
+  startLife: 10
+  destroyOnKill: 0
   delayToKill: 1
   _flashColor: {fileID: 926367630}
 --- !u!114 &359934631
@@ -2675,6 +2677,19 @@ MonoBehaviour:
   - {fileID: 745109303}
   color: {r: 0.9716981, g: 0.53626734, b: 0.53626734, a: 1}
   duration: 0.1
+--- !u!114 &926367631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926367628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938d9b1e3a9d75c46a0a3d6b7a8e3f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 359934629}
 --- !u!1 &936659954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,7 +2725,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  triggerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &936659956
 Rigidbody2D:
   serializedVersion: 4
@@ -3315,10 +3332,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76d225b73f4e3746be3337039c4d0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   animator: {fileID: 278359480}
   triggerAttack: Attack
+  triggerDeath: Death
   healthBase: {fileID: 1097812959}
+  timeToDestroy: 1
 --- !u!4 &1097812957
 Transform:
   m_ObjectHideFlags: 0
@@ -3367,8 +3386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffe4726cdc1c9041aa4e8309a562551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLife: 10
-  destroyOnKill: 1
+  startLife: 5
+  destroyOnKill: 0
   delayToKill: 0
   _flashColor: {fileID: 0}
 --- !u!114 &1097812960
