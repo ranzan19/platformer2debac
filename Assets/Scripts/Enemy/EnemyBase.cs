@@ -38,7 +38,7 @@ public class EnemyBase : MonoBehaviour
         {
             health.Damage(damage);
             PlayAttackAnimation();
-            Destroy(gameObject, timeToDestroy);
+            //Destroy(gameObject, timeToDestroy);
         }
     }
 
