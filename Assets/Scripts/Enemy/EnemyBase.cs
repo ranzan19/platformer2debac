@@ -14,8 +14,12 @@ public class EnemyBase : MonoBehaviour
 
     public float timeToDestroy = 1f;
 
+    private Collider2D collider;
+
     private void Awake()
     {
+        collider = GetComponent<Collider2D>();
+
         if (healthBase != null)
         {
             healthBase.OnKill += OnEnemyKill;
@@ -25,6 +29,7 @@ public class EnemyBase : MonoBehaviour
     private void OnEnemyKill()
     {
         healthBase.OnKill -= OnEnemyKill;
+        collider.enabled = false;
         PlayDeathAnimation();
     }
 
