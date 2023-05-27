@@ -7,6 +7,7 @@ using Ebac.Core.Singleton;
 public class UIInGameManager : Singleton<UIInGameManager>
 {
     public TextMeshProUGUI uiTextCoins;
+    public TextMeshProUGUI uiTextEspecialCoins;
 
 
     public static void UpdateTextCoins(string s)
