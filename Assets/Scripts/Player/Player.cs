@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
         }
 
         _currentPlayer = Instantiate(soPlayerSetup.player, transform);
+        _currentPlayer.GetComponentInChildren<PlayerDestroyHelper>().player = this;
 
         if(collider2D != null)
         {

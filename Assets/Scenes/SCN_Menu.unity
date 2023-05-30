@@ -4312,6 +4312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Astronaut
       objectReference: {fileID: 0}
+    - target: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
 --- !u!1001 &8763598642799732871
