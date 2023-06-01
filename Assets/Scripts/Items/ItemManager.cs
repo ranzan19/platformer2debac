@@ -20,12 +20,14 @@ public class ItemManager : Singleton<ItemManager>
     private void Reset()
     {
         coins.value = 0;
+        especialCoins.value = 0;
         UpdateUI();
     }
 
     public void AddEspecialCoins(int amount = 1)
     {
-        especialCoins.value = +amount;
+        especialCoins.value += amount;
+        UpdateUI();
     }
 
     public void AddCoins(int amout = 1)
