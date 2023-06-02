@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ItemCollectableCoin : ItemCollectableBase
 {
+    [Header("CoinType")]
+    
+
     public CoinType coinType = CoinType.NORMAL;
 
 
