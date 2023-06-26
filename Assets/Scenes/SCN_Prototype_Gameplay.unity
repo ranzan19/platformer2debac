@@ -4465,10 +4465,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 359934629}
-    - target: {fileID: 4206393887524540112, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1619961093}
     - target: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5244,11 +5240,6 @@ RectTransform:
   m_AnchoredPosition: {x: 195.7569, y: -145.89}
   m_SizeDelta: {x: 357.309, y: 256.287}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &1619961093 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3368755745964367484, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-  m_PrefabInstance: {fileID: 1340598560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1642275499
 GameObject:
   m_ObjectHideFlags: 0
